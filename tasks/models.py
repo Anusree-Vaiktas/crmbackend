@@ -6,7 +6,7 @@ from leads.models import Lead
 
 class Tasks(models.Model):
     task_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    lead = models.ForeignKey('Lead', on_delete=models.CASCADE, related_name='tasks')
+    lead = models.ForeignKey('leads.Lead', on_delete=models.CASCADE, related_name='tasks')
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
     assigned_to = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)

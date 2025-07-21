@@ -40,12 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'tasks',
     'leads',
     'rest_framework',
     'rest_framework_simplejwt',
+    'corsheaders',
 ]
 
+CORS_ALLOWED_ORIGINS = ['*']
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -92,7 +97,7 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.parse(
-        'postgresql://crmdb_cm49_user:nakJet53OFVhGoo2PGDjWFjohshnf4in@dpg-d14knn63jp1c73bhamh0-a.virginia-postgres.render.com/crmdb_cm49',
+        'postgresql://crmdb_rd3w_user:025qWWShLUojPzUSo1T2KzIdh9lOQkhB@dpg-d1v448umcj7s73f1rac0-a.oregon-postgres.render.com/crmdb_rd3w',
         conn_max_age=600,
         ssl_require=True
     )
