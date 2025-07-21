@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
-CORS_ALLOWED_ORIGINS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
